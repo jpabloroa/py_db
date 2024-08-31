@@ -9,7 +9,6 @@ setup(
         "mysql-connector-python==9.0.0",
         "psycopg2==2.9.9",
         "pyodbc==5.1.0",
-        "setuptools==74.0.0",
     ],
     author="Juan Pablo Roa",
     description="A Python library to manage SQL databases and APIs with a unified interface.",
