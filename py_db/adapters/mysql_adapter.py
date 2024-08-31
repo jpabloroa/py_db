@@ -23,7 +23,7 @@ class MySQLAdapter(BaseAdapter):
             user=self.config.user,
             password=self.config.password,
             database=self.config.database,
-            port=self.config.port,
+            port=self.config.port or 3306,
         )
 
     def disconnect(self):

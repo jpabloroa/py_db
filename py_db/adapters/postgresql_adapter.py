@@ -23,7 +23,7 @@ class PostgreSQLAdapter(BaseAdapter):
             user=self.config.user,
             password=self.config.password,
             dbname=self.config.database,
-            port=self.config.port,
+            port=self.config.port or 5432,
         )
 
     def disconnect(self):
