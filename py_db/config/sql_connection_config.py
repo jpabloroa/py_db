@@ -65,7 +65,7 @@ class SqlConnectionConfig(BaseConnectionConfig):
         ]
 
         config_variable_names = [
-            f"{credential_name.upper()}_{variable}" for variable in class_variables
+            f"{credential_name}_{variable}".upper() for variable in class_variables
         ]
 
         if throw_on_error & (
@@ -84,7 +84,7 @@ class SqlConnectionConfig(BaseConnectionConfig):
 
         return cls(
             **{
-                variable: config_values.get(f"{credential_name.upper()}_{variable}")
+                variable: config_values.get(f"{credential_name}_{variable}".upper())
                 for variable in class_variables
             }
         )
