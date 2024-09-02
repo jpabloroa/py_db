@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="py_db",
-    version="1.2",
+    version="1.3",
     packages=find_packages(),
     install_requires=[
         "mysql-connector-python==9.0.0",
