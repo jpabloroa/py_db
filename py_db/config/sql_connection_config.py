@@ -55,7 +55,7 @@ class SqlConnectionConfig(BaseConnectionConfig):
 
         config_values = dotenv_values(dotenv_path=cls.env_file_path)
 
-        if config_values is None & throw_on_error:
+        if config_values is None and throw_on_error:
             raise Exception("There's no '.env' file loaded.")
 
         class_variables = [
@@ -70,7 +70,7 @@ class SqlConnectionConfig(BaseConnectionConfig):
             f"{credential_name}_{variable}".upper() for variable in class_variables
         ]
 
-        if throw_on_error & (
+        if throw_on_error and (
             len(
                 [
                     variable_name
