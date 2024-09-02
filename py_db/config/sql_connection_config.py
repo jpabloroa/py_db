@@ -1,6 +1,6 @@
 # config/sql_connection _config.py
 
-from dotenv import load_dotenv, dotenv_values
+from dotenv import dotenv_values
 from typing import Optional
 from .base_connection_config import BaseConnectionConfig
 
@@ -52,9 +52,11 @@ class SqlConnectionConfig(BaseConnectionConfig):
         :param credential_name: Name of the credential, it must match with the prefix (followed by '_') of the defined variables.
         :param throw_on_error: Determines if on an error, the function throws up an exception
         """
-        load_dotenv(dotenv_path=cls.env_file_path)
 
-        config_values = dotenv_values()
+        config_values = dotenv_values(dotenv_path=cls.env_file_path)
+
+        if config_values is None & throw_on_error:
+            raise Exception("There's no '.env' file loaded.")
 
         class_variables = [
             "host",
